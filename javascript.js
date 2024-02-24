@@ -28,14 +28,23 @@ function showEmailError(){
         }
     }
 
-// function showPasswordError(){
-//     if (password.validity.tooShort)
-// }
 
-confirm_password.addEventListener("input", (event) => {
-    if (confirm_password.value !== password.value){
-        confirm_password.setCustomValidity("Your passwords do not match.");
+password.addEventListener("input", showPasswordError)
+
+function showPasswordError(event){
+    if (password.value.length < password.minLength){
+        passwordError.textContent = "You need a minimum of 8 characters.";
     } else {
-        confirm_password.setCustomValidity("");
+        passwordError.textContent = "";
+    }
+}
+
+function comparePassword(event){
+    if (confirm_password.value !== password.value){
+        confirmPasswordError.textContent = "Your passwords do not match.";
+    } else {
+        confirmPasswordError.textContent = "";
     } 
-});
+}
+
+confirm_password.addEventListener("input", comparePassword);
