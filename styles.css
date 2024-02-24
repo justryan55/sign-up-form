@@ -55,10 +55,6 @@ html, body {
     flex-direction: row;
 }
 
-.right-side .submit {
-    margin-top: 20px;
-}
-
 .right-side p {
     margin-top: 20px;
     font-size: 14px;
@@ -83,7 +79,7 @@ html, body {
 .input-container label {
     padding-right: 15px;
     width: 50%;
-    
+    white-space: nowrap;
 }
 
 .input-container input[type='text'], 
@@ -125,4 +121,18 @@ input:valid {
 
 .error {
     color: red;
+}
+
+.right-side form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.right-side form button[type="submit"]:hover {
+    background-color: #0056b3;
 }
